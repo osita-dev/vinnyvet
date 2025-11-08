@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 
+    ═══════════════════════════════════════════════════════════════
+    VETERINARY CLINIC WEBSITE - QUICK SETUP GUIDE
+    ═══════════════════════════════════════════════════════════════
+    
+    TO CUSTOMIZE THIS WEBSITE:
+    1. SEARCH & REPLACE: "[Your Clinic Name]" with your actual clinic name
+    2. SEARCH & REPLACE: "2348012345678" with your WhatsApp number (no + or spaces)
+    3. SEARCH & REPLACE: "your-email@example.com" with your email
+    4. SEARCH & REPLACE: "[Your City, State]" with your location
+    5. UPDATE IMAGES: Replace all src="https://images.unsplash.com/..." with your actual images
+    6. UPDATE GOOGLE MAPS: Replace the iframe src with your Google Maps embed URL
+    7. UPDATE HOURS: Change opening hours in the About section
+    8. UPDATE PRICES: Edit prices in Services section
+    9. UPDATE TESTIMONIALS: Add real customer reviews
+    10. UPDATE JSON-LD SCHEMA: Scroll to bottom and update business details
+    
+    COLORS: To change the primary color scheme, search for "emerald" and 
+    replace with another Tailwind color (blue, green, teal, indigo, etc.)
+    
+    ═══════════════════════════════════════════════════════════════
+    -->
+    
+    <!-- SEO Meta Tags - CUSTOMIZE THESE -->
+    <title>Dr. Vinny Veterinary Care & Animal Health | Trusted Animal Healthcare</title>
+    <meta name="description" content="Professional veterinary care and animal health products for dogs, cats, poultry, fish, and cattle. Expert checkups, vaccinations, drugs, and training services in [Your City].">
+    <meta name="keywords" content="veterinary clinic, animal health, vet, poultry drugs, animal vaccination, pet care, cattle health, fish farming, animal training, veterinary supplies">
+    <meta name="author" content="[Your Clinic Name]">
+    
+    <!-- Open Graph / Social Media Meta Tags - CUSTOMIZE THESE -->
+    <meta property="og:title" content="Dr. Vinny Veterinary Care & Animal Health">
+    <meta property="og:description" content="Trusted Veterinary Care & Animal Health Products for All Animals in [Your City]">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:image" content="https://yourwebsite.com/assets/images/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dr. [Your Name] Veterinary Care & Animal Health">
+    <meta name="twitter:description" content="Trusted Veterinary Care & Animal Health Products for All Animals">
+    <meta name="twitter:image" content="https://yourwebsite.com/assets/images/og-image.jpg">
+    
+    <!-- Canonical URL - CHANGE THIS -->
+    <link rel="canonical" href="https://yourwebsite.com">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Favicon - REPLACE WITH YOUR LOGO -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    
+    <style>
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Star Rating Styles */
+        .star-rating {
+            color: #fbbf24;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         NAVIGATION BAR
+         Sticky header with clinic name and navigation links
+         CUSTOMIZE: Update clinic name
+    ═══════════════════════════════════════════════════════════════ -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- CHANGE THIS: Your clinic name -->
+            <div class="text-2xl font-bold text-emerald-600">
+                <i class="fas fa-paw mr-2"></i>Dr.Vinny Vet
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-700 hover:text-emerald-600 transition">About</a>
+                <a href="#products" class="text-gray-700 hover:text-emerald-600 transition">Products</a>
+                <a href="#services" class="text-gray-700 hover:text-emerald-600 transition">Services</a>
+                <a href="#reviews" class="text-gray-700 hover:text-emerald-600 transition">Reviews</a>
+                <a href="#contact" class="text-gray-700 hover:text-emerald-600 transition">Contact</a>
+            </div>
+            
+            <!-- WhatsApp Quick Link -->
+            <a href="https://wa.me/08034866596" id="nav-whatsapp" class="hidden md:inline-block bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition">
+                <i class="fab fa-whatsapp mr-2"></i>WhatsApp Us
+            </a>
+        </nav>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-4 flex flex-col space-y-3">
+                <a href="#about" class="text-gray-700 hover:text-emerald-600 transition">About</a>
+                <a href="#products" class="text-gray-700 hover:text-emerald-600 transition">Products</a>
+                <a href="#services" class="text-gray-700 hover:text-emerald-600 transition">Services</a>
+                <a href="#reviews" class="text-gray-700 hover:text-emerald-600 transition">Reviews</a>
+                <a href="#contact" class="text-gray-700 hover:text-emerald-600 transition">Contact</a>
+                <a href="https://wa.me/08034866596" id="nav-whatsapp" class=" md:inline-block bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition">
+                <i class="fab fa-whatsapp mr-2"></i>WhatsApp Us
+            </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         HERO SECTION
+         Main banner with clinic name, tagline, and CTAs
+         CUSTOMIZE: Update clinic name, tagline, and hero image
+    ═══════════════════════════════════════════════════════════════ -->
+    <section class="relative bg-gradient-to-br from-emerald-50 to-teal-50 py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div class="text-center md:text-left">
+                    <!-- CHANGE THIS: Your clinic name -->
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                        Dr. Vinny<br>
+                        <span class="text-emerald-600">Veterinary Care</span><br>
+                        & Animal Health
+                    </h1>
+                    
+                    <!-- CHANGE THIS: Your tagline -->
+                    <p class="text-lg md:text-xl text-gray-700 mb-8">
+                        Trusted Veterinary Care & Animal Health Products for All Animals.
+                    </p>
+                    
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="#booking" class="bg-emerald-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-emerald-700 transition shadow-lg">
+                            <i class="fas fa-calendar-check mr-2"></i>Book Appointment
+                        </a>
+                        <a href="#booking" class="bg-white text-emerald-600 border-2 border-emerald-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-emerald-50 transition shadow-lg">
+                            <i class="fas fa-shopping-cart mr-2"></i>Get Quote / Buy
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <!-- CHANGE THIS: Replace with your clinic or animal image -->
+                <div class="order-first md:order-last">
+                    <img 
+                        src="https://images.unsplash.com/photo-1530126483408-aa533e55bdb2?w=800&h=600&fit=crop" 
+                        alt="Happy dog receiving veterinary care at our clinic"
+                        class="rounded-2xl shadow-2xl w-full object-cover"
+                    >
+                    <!-- TO USE YOUR OWN IMAGE: 
+                         1. Save your image to /assets/images/hero.jpg
+                         2. Replace src with: src="/assets/images/hero.jpg"
+                    -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         ABOUT SECTION
+         Information about the vet practice
+         CUSTOMIZE: Update text, years of experience, opening hours, location
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="about" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About Our Practice</h2>
+                
+                <!-- CHANGE THIS: Update with your practice information -->
+                <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                    With over <strong>15 years of experience</strong>, Dr. Vinny Vet provides comprehensive veterinary care and animal health services for pets, farm animals, and aquatic species. Our clinic specializes in preventive care, treatment, vaccinations, and the supply of quality veterinary drugs. We also offer expert training and consultancy services for poultry management, fish farming, and animal husbandry.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8 text-left">
+                    <!-- Opening Hours -->
+                    <div class="bg-emerald-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-emerald-700 mb-4">
+                            <i class="fas fa-clock mr-2"></i>Opening Hours
+                        </h3>
+                        <!-- CHANGE THIS: Update your hours -->
+                        <ul class="space-y-2 text-gray-700">
+                            <li><strong>Monday - Friday:</strong> 8:00 AM - 6:00 PM</li>
+                            <li><strong>Saturday:</strong> 9:00 AM - 4:00 PM</li>
+                            <li><strong>Sunday:</strong> Closed (Emergency calls only)</li>
+                            <li class="text-emerald-600 font-semibold mt-4">24/7 Emergency Services Available</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Location -->
+                    <div class="bg-teal-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-teal-700 mb-4">
+                            <i class="fas fa-map-marker-alt mr-2"></i>Location
+                        </h3>
+                        <!-- CHANGE THIS: Update your address -->
+                        <p class="text-gray-700 mb-4">
+                            <strong>Address:</strong><br>
+                            123 Main Street<br>
+                            [Lagos, State]<br>
+                            Nigeria
+                        </p>
+                        <p class="text-teal-600 font-semibold">
+                            Easy access with ample parking
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Optional: Add vet photo here -->
+            <!-- UNCOMMENT AND ADD YOUR PHOTO: -->
+            <div class="text-center mt-12">
+                <img 
+                    src="assests/images/vinnyVet.jpg" 
+                    alt="Dr. vinnyVet, experienced veterinarian"
+                    class="w-64 h-64 object-cover rounded-full mx-auto shadow-lg"
+                >
+                <p class="mt-4 text-gray-600 italic">Dr. Vinny Vet</p>
+            </div>
+           
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         PRODUCTS & GALLERY SECTION
+         Responsive grid of products with images, names, and prices
+         CUSTOMIZE: Update images, product names, prices, and descriptions
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="products" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Products & Services</h2>
+                <p class="text-lg text-gray-600">Quality veterinary supplies and expert care for all your animals</p>
+            </div>
+            
+            <!-- Product Grid -->
+            <!-- CHANGE THIS: Replace images and update product information -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <!-- REPLACE WITH YOUR IMAGE -->
+                    <img 
+                        src="assests/images/product10.jpeg" 
+                        alt="Veterinary drugs and supplements for dogs"
+                        class="w-full h-48 object-cover"
+                    >
+                    <div class="p-6">
+                        <!-- CHANGE THIS: Product name and description -->
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Dog Health Supplies</h3>
+                        <p class="text-gray-600 mb-4">Complete range of vaccines, dewormers, vitamins, and supplements for dogs of all breeds and ages.</p>
+                        <!-- CHANGE THIS: Price -->
+                        <p class="text-emerald-600 font-bold text-lg mb-4">From ₦3,500</p>
+                        <a href="#" class="product-quote-btn block w-full bg-emerald-600 text-white text-center px-4 py-2 rounded-lg hover:bg-emerald-700 transition">
+                            <i class="fab fa-whatsapp mr-2"></i>Get Quote
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <!-- REPLACE WITH YOUR IMAGE -->
+                    <img 
+                        src="assests/images/product4.jpeg" 
+                        alt="Poultry vaccines and medications"
+                        class="w-full h-48 object-cover"
+                    >
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Poultry Drugs & Vaccines</h3>
+                        <p class="text-gray-600 mb-4">Antibiotics, anti-stress, coccidiostats, and all poultry vaccination programs for broilers and layers.</p>
+                        <p class="text-emerald-600 font-bold text-lg mb-4">From ₦2,000</p>
+                        <a href="#" class="product-quote-btn block w-full bg-emerald-600 text-white text-center px-4 py-2 rounded-lg hover:bg-emerald-700 transition">
+                            <i class="fab fa-whatsapp mr-2"></i>Get Quote
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <!-- REPLACE WITH YOUR IMAGE -->
+                    <img 
+                        src="assests/images/product15.jpeg" 
+                        alt="Fish farming medications and water treatments"
+                        class="w-full h-48 object-cover"
+                    >
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Fish Farming Solutions</h3>
+                        <p class="text-gray-600 mb-4">Water treatments, anti-bacterial, anti-fungal medications, and fish nutrition supplements.</p>
+                        <p class="text-emerald-600 font-bold text-lg mb-4">From ₦5,000</p>
+                        <a href="#" class="product-quote-btn block w-full bg-emerald-600 text-white text-center px-4 py-2 rounded-lg hover:bg-emerald-700 transition">
+                            <i class="fab fa-whatsapp mr-2"></i>Get Quote
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product Card 4 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img 
+                        src="assests/images/product3.jpeg" 
+                        alt="Cattle veterinary care and treatment"
+                        class="w-full h-48 object-cover"
+                    >
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Cattle Health Care</h3>
+                        <p class="text-gray-600 mb-4">Vaccines, dewormers, vitamins, and treatment for all livestock including cattle, goats, and sheep.</p>
+                        <p class="text-emerald-600 font-bold text-lg mb-4">From ₦8,000</p>
+                        <a href="#" class="product-quote-btn block w-full bg-emerald-600 text-white text-center px-4 py-2 rounded-lg hover:bg-emerald-700 transition">
+                            <i class="fab fa-whatsapp mr-2"></i>Get Quote
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product Card 5 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img 
+                        src="https://images.unsplash.com/photo-1415369629372-26f2fe60c467?w=400&h=300&fit=crop" 
+                        alt="Poultry farming training and consultancy"
+                        class="w-full h-48 object-cover"
+                    >
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Poultry Training</h3>
+                        <p class="text-gray-600 mb-4">Expert training on poultry management, disease prevention, feeding programs, and farm profitability.</p>
+                        <p class="text-emerald-600 font-bold text-lg mb-4">₦15,000 - ₦50,000</p>
+                        <a href="#" class="product-quote-btn block w-full bg-emerald-600 text-white text-center px-4 py-2 rounded-lg hover:bg-emerald-700 transition">
+                            <i class="fab fa-whatsapp mr-2"></i>Get Quote
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product Card 6 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
+                    <img 
+                        src="https://images.unsplash.com/photo-1524704796725-9fc3044a58b2?w=400&h=300&fit=crop" 
+                        alt="Pet vaccination and checkup services"
+                        class="w-full h-48 object-cover"
+                    >
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Vaccination Services</h3>
+                        <p class="text-gray-600 mb-4">Complete vaccination programs for puppies, kittens, and adult pets. Includes rabies, distemper, parvo, and more.</p>
+                        <p class="text-emerald-600 font-bold text-lg mb-4">From ₦5,000</p>
+                        <a href="#" class="product-quote-btn block w-full bg-emerald-600 text-white text-center px-4 py-2 rounded-lg hover:bg-emerald-700 transition">
+                            <i class="fab fa-whatsapp mr-2"></i>Get Quote
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         SERVICES & PRICES SECTION
+         List of services with price ranges
+         CUSTOMIZE: Update services and prices
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="services" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Services & Pricing</h2>
+                <p class="text-lg text-gray-600">Affordable, professional care for all your animals</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                
+                <!-- Service Category 1 -->
+                <div class="bg-emerald-50 p-8 rounded-lg">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-pills text-5xl text-emerald-600 mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-900">Veterinary Drugs</h3>
+                    </div>
+                    <!-- CHANGE THIS: Update services and prices -->
+                    <ul class="space-y-3 text-gray-700">
+                        <li><i class="fas fa-check text-emerald-600 mr-2"></i>Dog medications - from ₦3,500</li>
+                        <li><i class="fas fa-check text-emerald-600 mr-2"></i>Cat medications - from ₦3,000</li>
+                        <li><i class="fas fa-check text-emerald-600 mr-2"></i>Poultry drugs - from ₦2,000</li>
+                        <li><i class="fas fa-check text-emerald-600 mr-2"></i>Fish treatments - from ₦5,000</li>
+                        <li><i class="fas fa-check text-emerald-600 mr-2"></i>Cattle vaccines - from ₦8,000</li>
+                    </ul>
+                </div>
+                
+                <!-- Service Category 2 -->
+                <div class="bg-teal-50 p-8 rounded-lg">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-stethoscope text-5xl text-teal-600 mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-900">Health Services</h3>
+                    </div>
+                    <!-- CHANGE THIS: Update services and prices -->
+                    <ul class="space-y-3 text-gray-700">
+                        <li><i class="fas fa-check text-teal-600 mr-2"></i>General checkup - ₦3,000</li>
+                        <li><i class="fas fa-check text-teal-600 mr-2"></i>Vaccination - from ₦5,000</li>
+                        <li><i class="fas fa-check text-teal-600 mr-2"></i>Deworming - from ₦2,000</li>
+                        <li><i class="fas fa-check text-teal-600 mr-2"></i>Treatment/Surgery - varies</li>
+                        <li><i class="fas fa-check text-teal-600 mr-2"></i>Emergency care - call for quote</li>
+                    </ul>
+                </div>
+                
+                <!-- Service Category 3 -->
+                <div class="bg-blue-50 p-8 rounded-lg">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-graduation-cap text-5xl text-blue-600 mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-900">Training & Consultancy</h3>
+                    </div>
+                    <!-- CHANGE THIS: Update services and prices -->
+                    <ul class="space-y-3 text-gray-700">
+                        <li><i class="fas fa-check text-blue-600 mr-2"></i>Poultry management - ₦15,000+</li>
+                        <li><i class="fas fa-check text-blue-600 mr-2"></i>Fish farming - ₦20,000+</li>
+                        <li><i class="fas fa-check text-blue-600 mr-2"></i>Hatchery setup - ₦25,000+</li>
+                        <li><i class="fas fa-check text-blue-600 mr-2"></i>Farm consultancy - varies</li>
+                        <li><i class="fas fa-check text-blue-600 mr-2"></i>Disease prevention - varies</li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-gray-600 mb-6">All prices are subject to change. Contact us for current rates and package deals.</p>
+                <a href="#booking" class="inline-block bg-emerald-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition">
+                    Get a Custom Quote
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         BOOKING & GET QUOTE SECTION
+         WhatsApp booking forms with prefilled messages
+         CUSTOMIZE: Phone number is set in JavaScript (see main.js)
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="booking" class="py-16 md:py-24 bg-gradient-to-br from-emerald-50 to-teal-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Book Appointment or Get Quote</h2>
+                <p class="text-lg text-gray-600">Quick and easy via WhatsApp or email</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                
+                <!-- Book Appointment Card -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-calendar-check text-5xl text-emerald-600 mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-900">Book Appointment</h3>
+                        <p class="text-gray-600 mt-2">Schedule a visit for checkup, vaccination, or treatment</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <!-- WhatsApp Button -->
+                        <a href="https://wa.me/08034866596" id="book-appointment-btn" class="block w-full bg-emerald-600 text-white text-center px-6 py-4 rounded-lg font-semibold hover:bg-emerald-700 transition">
+                            <i class="fab fa-whatsapp text-2xl mr-2"></i>
+                            Book via WhatsApp
+                        </a>
+                        
+                        <!-- Email Fallback -->
+                        <a href="mailto:your-email@example.com?subject=Appointment%20Booking&body=Hi,%20I%20want%20to%20book%20an%20appointment.%0A%0APreferred%20Date:%20%0APreferred%20Time:%20%0AAnimal%20Type:%20%0AMy%20Name:%20%0A" 
+                           class="block w-full bg-gray-200 text-gray-700 text-center px-6 py-4 rounded-lg font-semibold hover:bg-gray-300 transition">
+                            <i class="fas fa-envelope mr-2"></i>
+                            Book via Email
+                        </a>
+                        
+                        <p class="text-sm text-gray-500 text-center">
+                            You'll be redirected to WhatsApp with a pre-filled message
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Get Quote Card -->
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <div class="text-center mb-6">
+                        <i class="fas fa-file-invoice-dollar text-5xl text-teal-600 mb-4"></i>
+                        <h3 class="text-2xl font-bold text-gray-900">Get Quote / Buy</h3>
+                        <p class="text-gray-600 mt-2">Request pricing for products, drugs, or training services</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <!-- WhatsApp Button -->
+                        <a href="#" id="get-quote-btn" class="block w-full bg-teal-600 text-white text-center px-6 py-4 rounded-lg font-semibold hover:bg-teal-700 transition">
+                            <i class="fab fa-whatsapp text-2xl mr-2"></i>
+                            Get Quote via WhatsApp
+                        </a>
+                        
+                        <!-- Email Fallback -->
+                        <a href="mailto:your-email@example.com?subject=Quote%20Request&body=Hi,%20please%20send%20a%20quote.%0A%0AItem/Service:%20%0AAnimal%20Type:%20%0AQuantity:%20%0APreferred%20Delivery:%20%0ADeadline:%20%0A" 
+                           class="block w-full bg-gray-200 text-gray-700 text-center px-6 py-4 rounded-lg font-semibold hover:bg-gray-300 transition">
+                            <i class="fas fa-envelope mr-2"></i>
+                            Get Quote via Email
+                        </a>
+                        
+                        <p class="text-sm text-gray-500 text-center">
+                            You'll be redirected to WhatsApp with a pre-filled message
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Call Option -->
+            <div class="text-center mt-12">
+                <p class="text-lg text-gray-700 mb-4">Prefer to call? We're available!</p>
+                <!-- CHANGE THIS: Your phone number -->
+                <a href="https://wa.me/08034866596" class="inline-block bg-gray-800 text-white px-8 py-3 rounded-lg font-semibold hover:bg-gray-900 transition">
+                    <i class="fas fa-phone mr-2"></i>Call: +234 803 486 659
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         TESTIMONIALS / REVIEWS SECTION
+         Customer reviews with star ratings
+         CUSTOMIZE: Update testimonials with real customer feedback
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="reviews" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+                <p class="text-lg text-gray-600">Trusted by pet owners, farmers, and animal professionals</p>
+            </div>
+            
+            <!-- Testimonials Grid -->
+            <!-- CHANGE THIS: Update with real testimonials -->
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+                
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <div class="star-rating text-2xl mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">
+                        "Dr. Vinny Vet, saved my dog's life during an emergency. The care and expertise shown was exceptional. I highly recommend this clinic to all pet owners!"
+                    </p>
+                    <p class="font-semibold text-gray-900">- Chidi O.</p>
+                    <p class="text-sm text-gray-500">Dog Owner, Lagos</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <div class="star-rating text-2xl mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">
+                        "The poultry training program transformed my farm. I learned disease prevention, feeding schedules, and now my birds are healthier and more productive!"
+                    </p>
+                    <p class="font-semibold text-gray-900">- Blessing A.</p>
+                    <p class="text-sm text-gray-500">Poultry Farmer, Ogun State</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <div class="star-rating text-2xl mb-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-700 italic mb-4">
+                        "Reliable source for quality fish farming medications. Fast delivery and expert advice on water quality management. My fish survival rate improved greatly!"
+                    </p>
+                    <p class="font-semibold text-gray-900">- Emmanuel U.</p>
+                    <p class="text-sm text-gray-500">Fish Farmer, Ibadan</p>
+                </div>
+                
+            </div>
+            
+            <!-- Leave a Review CTA -->
+            <div class="text-center bg-emerald-50 p-8 rounded-lg max-w-2xl mx-auto">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">Happy with our service?</h3>
+                <p class="text-gray-600 mb-6">Share your experience and help other pet owners and farmers find quality care!</p>
+                
+                <!-- CHANGE THIS: Replace with your Google Review link -->
+                <!-- To get your Google Review link:
+                     1. Search your business on Google Maps
+                     2. Click "Share" then "Embed a map"
+                     3. Copy the review link OR use the shortened link format
+                     Example: https://g.page/r/YOUR_BUSINESS_ID/review
+                -->
+                <a href="https://g.page/r/YOUR_BUSINESS_ID/review" 
+                   target="_blank"
+                   class="inline-block bg-emerald-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-emerald-700 transition">
+                    <i class="fab fa-google mr-2"></i>Leave a Google Review
+                </a>
+                
+                <p class="text-sm text-gray-500 mt-4">
+                    Or share your feedback via WhatsApp
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         CONTACT & MAP SECTION
+         Contact information and embedded Google Map
+         CUSTOMIZE: Update all contact details and Google Maps embed
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="contact" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Contact Us</h2>
+                <p class="text-lg text-gray-600">We're here to help your animals stay healthy</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                
+                <!-- Contact Information -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Phone -->
+                        <!-- CHANGE THIS: Your phone number -->
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt text-emerald-600 text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <p class="font-semibold text-gray-900">Phone</p>
+                                <a href="https://wa.me/08034866596" class="text-emerald-600 hover:underline">
+                                    +234 803 486 6596
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- WhatsApp -->
+                        <!-- CHANGE THIS: Your WhatsApp number -->
+                        <div class="flex items-start">
+                            <i class="fab fa-whatsapp text-emerald-600 text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <p class="font-semibold text-gray-900">WhatsApp</p>
+                                <a href="https://wa.me/08034866596" id="contact-whatsapp" class="text-emerald-600 hover:underline">
+                                    Chat on WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Email -->
+                        <!-- CHANGE THIS: Your email -->
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-emerald-600 text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <p class="font-semibold text-gray-900">Email</p>
+                                <a href="mailto:your-email@example.com" class="text-emerald-600 hover:underline">
+                                    your-email@example.com
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Address -->
+                        <!-- CHANGE THIS: Your address -->
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-emerald-600 text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <p class="font-semibold text-gray-900">Address</p>
+                                <p class="text-gray-700">
+                                    123 Main Street<br>
+                                    [Lagos, State]<br>
+                                    Nigeria
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Media (Optional) -->
+                        <div class="flex items-start">
+                            <i class="fas fa-share-alt text-emerald-600 text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <p class="font-semibold text-gray-900 mb-2">Follow Us</p>
+                                <div class="flex space-x-4">
+                                    <!-- CHANGE THIS: Add your social media links -->
+                                    <a href="https://facebook.com/yourpage" target="_blank" class="text-gray-600 hover:text-emerald-600 text-2xl">
+                                        <i class="fab fa-facebook"></i>
+                                    </a>
+                                    <a href="https://instagram.com/yourpage" target="_blank" class="text-gray-600 hover:text-emerald-600 text-2xl">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="https://twitter.com/yourpage" target="_blank" class="text-gray-600 hover:text-emerald-600 text-2xl">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Google Map -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Find Us</h3>
+                    
+                    <!-- CHANGE THIS: Replace with your Google Maps embed URL -->
+                    <!-- To get your Google Maps embed:
+                         1. Go to Google Maps
+                         2. Search for your business address
+                         3. Click "Share" → "Embed a map"
+                         4. Copy the iframe src URL and paste below
+                    -->
+                    <div class="rounded-lg overflow-hidden shadow-lg h-96">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.6315088058845!2d3.3792057!3d6.4281074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjUnNDEuMiJOIDPCsDIyJzQ1LjEiRQ!5e0!3m2!1sen!2sng!4v1234567890"
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Dr. [Your Name] Veterinary Care location map">
+                        </iframe>
+                    </div>
+                    
+                    <p class="text-sm text-gray-500 mt-4 text-center">
+                        Click map to get directions
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         FOOTER
+         Copyright and additional links
+         CUSTOMIZE: Update year and clinic name
+    ═══════════════════════════════════════════════════════════════ -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <!-- CHANGE THIS: Your clinic name -->
+                <p class="text-lg font-semibold mb-2">Dr. Vinny Veterinary Care & Animal Health</p>
+                <p class="text-gray-400 mb-4">Trusted care for all your animals since 2014</p>
+                
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="#about" class="text-gray-400 hover:text-white transition">About</a>
+                    <a href="#products" class="text-gray-400 hover:text-white transition">Products</a>
+                    <a href="#services" class="text-gray-400 hover:text-white transition">Services</a>
+                    <a href="#reviews" class="text-gray-400 hover:text-white transition">Reviews</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a>
+                </div>
+                
+                <p class="text-sm text-gray-500">
+                    © 2024 Dr. Vinny Veterinary Care. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         STRUCTURED DATA (JSON-LD)
+         SEO-friendly business information for search engines
+         CUSTOMIZE: Update ALL fields with your actual business data
+    ═══════════════════════════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VeterinaryCare",
+      "name": "Dr. [Your Name] Veterinary Care & Animal Health",
+      "image": "https://yourwebsite.com/assets/images/clinic-photo.jpg",
+      "description": "Professional veterinary care and animal health products for dogs, cats, poultry, fish, and cattle in [Your City].",
+      "telephone": "+234803486659",
+      "email": "your-email@example.com",
+      "url": "https://yourwebsite.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "123 Main Street",
+        "addressLocality": "[Your City]",
+        "addressRegion": "[Your State]",
+        "addressCountry": "NG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "6.4281074",
+        "longitude": "3.3792057"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "16:00"
+        }
+      ],
+      "priceRange": "₦₦-₦₦₦",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "47"
+      }
+    }
+    </script>
+    
+    <!-- ═══════════════════════════════════════════════════════════════
+         IMPORTANT: Load the JavaScript file
+         This handles WhatsApp links and smooth scrolling
+    ═══════════════════════════════════════════════════════════════ -->
+    <script src="/js/main.js"></script>
+
+</body>
+</html>
